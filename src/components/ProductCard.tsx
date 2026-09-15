@@ -22,7 +22,7 @@ export function ProductCard({ product, onAddProduct }: Props) {
     <Card className="overflow-hidden pt-0 transition-colors hover:border-primary/40">
       <div className="relative aspect-square bg-secondary">
         <img
-          src={product.image}
+          src={`${import.meta.env.BASE_URL}${product.image.replace(/^\//, '')}`}
           alt={product.name}
           className="absolute inset-0 size-full object-cover"
         />
