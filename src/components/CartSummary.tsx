@@ -65,7 +65,11 @@ function CartLineItem({ line, onDecrement, onIncrement, onRemove }: CartLineItem
   return (
     <li className="flex items-start gap-3">
       <div className="relative size-14 shrink-0 overflow-hidden rounded-md bg-secondary">
-        <img src={line.product.image} alt="" className="absolute inset-0 size-full object-cover" />
+        <img
+          src={`${import.meta.env.BASE_URL}${line.product.image.replace(/^\//, '')}`}
+          alt={line.product.name}
+          className="absolute inset-0 size-full object-cover"
+        />
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col gap-2">
